@@ -7,6 +7,8 @@ end
 
 target 'WeightTracker' do
   use_frameworks!
+  pod 'SwinjectStoryboard'
+  pod 'SwinjectAutoregistration'
 
   target 'AppSpecs' do
     inherit! :search_paths
