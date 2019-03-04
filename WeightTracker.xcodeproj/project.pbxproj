@@ -43,10 +43,10 @@
 		4B6ED37B222C8F4F000B5263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B6ED37E222C8F4F000B5263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B6ED380222C8F4F000B5263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B6ED385222C8F4F000B5263 /* WeightTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6ED385222C8F4F000B5263 /* AppSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6ED389222C8F4F000B5263 /* WeightTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerTests.swift; sourceTree = "<group>"; };
 		4B6ED38B222C8F4F000B5263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B6ED390222C8F4F000B5263 /* WeightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B6ED390222C8F4F000B5263 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerUITests.swift; sourceTree = "<group>"; };
 		4B6ED396222C8F4F000B5263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				4B6ED370222C8F4E000B5263 /* WeightTracker */,
-				4B6ED388222C8F4F000B5263 /* WeightTrackerTests */,
-				4B6ED393222C8F4F000B5263 /* WeightTrackerUITests */,
+				4B6ED388222C8F4F000B5263 /* AppSpecs */,
+				4B6ED393222C8F4F000B5263 /* UITests */,
 				4B6ED36F222C8F4E000B5263 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				4B6ED36E222C8F4E000B5263 /* WeightTracker.app */,
-				4B6ED385222C8F4F000B5263 /* WeightTrackerTests.xctest */,
-				4B6ED390222C8F4F000B5263 /* WeightTrackerUITests.xctest */,
+				4B6ED385222C8F4F000B5263 /* AppSpecs.xctest */,
+				4B6ED390222C8F4F000B5263 /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,22 +110,22 @@
 			path = WeightTracker;
 			sourceTree = "<group>";
 		};
-		4B6ED388222C8F4F000B5263 /* WeightTrackerTests */ = {
+		4B6ED388222C8F4F000B5263 /* AppSpecs */ = {
 			isa = PBXGroup;
 			children = (
 				4B6ED389222C8F4F000B5263 /* WeightTrackerTests.swift */,
 				4B6ED38B222C8F4F000B5263 /* Info.plist */,
 			);
-			path = WeightTrackerTests;
+			path = AppSpecs;
 			sourceTree = "<group>";
 		};
-		4B6ED393222C8F4F000B5263 /* WeightTrackerUITests */ = {
+		4B6ED393222C8F4F000B5263 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
 				4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */,
 				4B6ED396222C8F4F000B5263 /* Info.plist */,
 			);
-			path = WeightTrackerUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +148,9 @@
 			productReference = 4B6ED36E222C8F4E000B5263 /* WeightTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4B6ED384222C8F4F000B5263 /* WeightTrackerTests */ = {
+		4B6ED384222C8F4F000B5263 /* AppSpecs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B6ED39C222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "WeightTrackerTests" */;
+			buildConfigurationList = 4B6ED39C222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "AppSpecs" */;
 			buildPhases = (
 				4B6ED381222C8F4F000B5263 /* Sources */,
 				4B6ED382222C8F4F000B5263 /* Frameworks */,
@@ -161,14 +161,14 @@
 			dependencies = (
 				4B6ED387222C8F4F000B5263 /* PBXTargetDependency */,
 			);
-			name = WeightTrackerTests;
+			name = AppSpecs;
 			productName = WeightTrackerTests;
-			productReference = 4B6ED385222C8F4F000B5263 /* WeightTrackerTests.xctest */;
+			productReference = 4B6ED385222C8F4F000B5263 /* AppSpecs.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4B6ED38F222C8F4F000B5263 /* WeightTrackerUITests */ = {
+		4B6ED38F222C8F4F000B5263 /* UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B6ED39F222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "WeightTrackerUITests" */;
+			buildConfigurationList = 4B6ED39F222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "UITests" */;
 			buildPhases = (
 				4B6ED38C222C8F4F000B5263 /* Sources */,
 				4B6ED38D222C8F4F000B5263 /* Frameworks */,
@@ -179,9 +179,9 @@
 			dependencies = (
 				4B6ED392222C8F4F000B5263 /* PBXTargetDependency */,
 			);
-			name = WeightTrackerUITests;
+			name = UITests;
 			productName = WeightTrackerUITests;
-			productReference = 4B6ED390222C8F4F000B5263 /* WeightTrackerUITests.xctest */;
+			productReference = 4B6ED390222C8F4F000B5263 /* UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,8 +221,8 @@
 			projectRoot = "";
 			targets = (
 				4B6ED36D222C8F4E000B5263 /* WeightTracker */,
-				4B6ED384222C8F4F000B5263 /* WeightTrackerTests */,
-				4B6ED38F222C8F4F000B5263 /* WeightTrackerUITests */,
+				4B6ED384222C8F4F000B5263 /* AppSpecs */,
+				4B6ED38F222C8F4F000B5263 /* UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -367,6 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -374,6 +375,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -422,12 +424,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -436,17 +440,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -454,37 +453,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		4B6ED39D222C8F4F000B5263 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTrackerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker.AppSpecs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Debug;
@@ -492,20 +480,14 @@
 		4B6ED39E222C8F4F000B5263 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTrackerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTrackerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker.AppSpecs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Release;
@@ -514,18 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeightTracker;
 			};
 			name = Debug;
@@ -534,18 +511,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
-				INFOPLIST_FILE = WeightTrackerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTrackerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.paulz.WeightTracker.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeightTracker;
 			};
 			name = Release;
@@ -571,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B6ED39C222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "WeightTrackerTests" */ = {
+		4B6ED39C222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "AppSpecs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B6ED39D222C8F4F000B5263 /* Debug */,
@@ -580,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B6ED39F222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "WeightTrackerUITests" */ = {
+		4B6ED39F222C8F4F000B5263 /* Build configuration list for PBXNativeTarget "UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B6ED3A0222C8F4F000B5263 /* Debug */,
