@@ -14,6 +14,10 @@ class WeightsViewController: UIViewController {
     var fetchController: NSFetchedResultsController<WeightEntry>!
     @IBOutlet weak var tableView: UITableView!
 
+    @IBAction func addWeight(_ sender: UIBarButtonItem) {
+
+    }
+
     func fetchData() {
         let fetchRequest: NSFetchRequest<WeightEntry> = WeightEntry.fetchRequest()
         let sortDescriptor = NSSortDescriptor(keyPath: \WeightEntry.date, ascending: false)
@@ -23,5 +27,18 @@ class WeightsViewController: UIViewController {
                                                      sectionNameKeyPath: nil,
                                                      cacheName: nil)
         try? fetchController.performFetch()
+    }
+}
+
+extension WeightsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchController.fetchedObjects!.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weight cell")!
+        cell.textLabel?.text = "Weight"
+        cell.detailTextLabel?.text = "Date"
+        return cell
     }
 }
