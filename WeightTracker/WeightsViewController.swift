@@ -15,7 +15,13 @@ class WeightsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func addWeight(_ sender: UIBarButtonItem) {
-
+        let entry = WeightEntry(context: context)
+        entry.date = Date()
+        entry.weight = 150
+        context.insert(entry)
+        try? context.save()
+        try? fetchController.performFetch()
+        tableView.reloadData()
     }
 
     func fetchData() {
