@@ -13,6 +13,7 @@ class WeightsViewController: UIViewController {
     var context: NSManagedObjectContext!
     var fetchController: NSFetchedResultsController<WeightEntry>!
     var generator: RandomGenerator!
+    var dateFormatter: DateFormatter!
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func addWeight(_ sender: UIBarButtonItem) {
@@ -46,7 +47,7 @@ extension WeightsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weight cell")!
         let weightEntry = fetchController.object(at: indexPath)
         cell.textLabel?.text = String(format: "%3.01f", weightEntry.weight)
-        cell.detailTextLabel?.text = weightEntry.date?.description
+        cell.detailTextLabel?.text = dateFormatter.string(from: weightEntry.date!)
         return cell
     }
 }

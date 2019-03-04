@@ -26,13 +26,19 @@ extension SwinjectStoryboard {
             generator.randomSource = r~>
             return generator
         }
-        defaultContainer.register(GKRandomSource.self) { r in
-            return GKLinearCongruentialRandomSource(seed: 42)
+        defaultContainer.register(GKRandomSource.self) { _ in
+            GKLinearCongruentialRandomSource(seed: 42)
+        }
+        defaultContainer.register(DateFormatter.self) { _ in
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            return formatter
         }
         defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         defaultContainer.storyboardInitCompleted(WeightsViewController.self) { r, c in
             c.context = r~>
             c.generator = r~>
+            c.dateFormatter = r~>
             c.fetchData()
         }
     }
