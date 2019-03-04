@@ -1,0 +1,65 @@
+import Quick
+import Nimble
+import CoreData
+import SwinjectStoryboard
+@testable import WeightTracker
+
+class DataModelSpec: QuickSpec {
+    override func spec() {
+        describe("Core Data Model") {
+            let container = SwinjectStoryboard.defaultContainer
+            var moc: NSManagedObjectContext!
+
+            beforeEach {
+                moc = container.resolve(NSManagedObjectContext.self)
+            }
+
+            afterEach {
+                moc.rollback()
+            }
+
+            context("Entities") {
+                it("should have weight entry") {
+                    let names = moc.persistentStoreCoordinator?.managedObjectModel.entitiesByName.keys.map {$0}
+                    expect(names).to(contain(["WeightEntry"]))
+                }
+            }
+            context("User") {
+                var entry: WeightEntry!
+
+                beforeEach {
+                    entry = WeightEntry(context: moc)
+                }
+
+                context("email") {
+                    it("should allow valid weight") {
+                        entry.weight = 139.0
+                        entry.date = Date()
+                        try! moc.save()
+                        expect(entry.weight) == 139.0
+                        expect(moc.hasChanges) == false
+                    }
+
+                    it("should raise validation errors when there are missing fields") {
+                        let expected = CocoaError.error(.validationMissingMandatoryProperty) as NSError
+                        entry.weight = 130.0
+                        expect {
+                                try entry.managedObjectContext?.save()
+                            }.to(throwError{ (e:NSError) in
+                                expect(e.domain) == expected.domain
+                                expect(e.code) == expected.code
+                            })
+                    }
+                }
+
+                context("fetchRequest") {
+                    it("should load all entries") {
+                        let request: NSFetchRequest<WeightEntry> = WeightEntry.fetchRequest()
+                        let entries = try! moc.fetch(request)
+                        expect(entries.count) >= 1
+                    }
+                }
+            }
+        }
+    }
+}

@@ -19,6 +19,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(NSManagedObjectContext.self) { r in
             return (r~>NSPersistentContainer.self).viewContext
         }
+        defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         defaultContainer.storyboardInitCompleted(WeightsViewController.self) { r, c in
             c.context = r~>
             c.fetchData()

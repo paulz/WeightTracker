@@ -37,8 +37,9 @@ extension WeightsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weight cell")!
-        cell.textLabel?.text = "Weight"
-        cell.detailTextLabel?.text = "Date"
+        let weightEntry = fetchController.object(at: indexPath)
+        cell.textLabel?.text = weightEntry.weight.description
+        cell.detailTextLabel?.text = weightEntry.date?.description
         return cell
     }
 }
