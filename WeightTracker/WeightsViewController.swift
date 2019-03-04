@@ -12,12 +12,13 @@ import CoreData
 class WeightsViewController: UIViewController {
     var context: NSManagedObjectContext!
     var fetchController: NSFetchedResultsController<WeightEntry>!
+    var generator: RandomGenerator!
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func addWeight(_ sender: UIBarButtonItem) {
         let entry = WeightEntry(context: context)
         entry.date = Date()
-        entry.weight = 150
+        entry.weight = generator.randomWeight()
         context.insert(entry)
         try? context.save()
         try? fetchController.performFetch()
