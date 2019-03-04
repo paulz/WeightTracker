@@ -21,9 +21,7 @@ class WeightsViewController: UIViewController {
         entry.date = Date()
         entry.weight = generator.randomWeight()
         context.insert(entry)
-        try? context.save()
-        try? fetchController.performFetch()
-        tableView.reloadData()
+        saveAndReload()
     }
 
     func fetchData() {
@@ -35,6 +33,12 @@ class WeightsViewController: UIViewController {
                                                      sectionNameKeyPath: nil,
                                                      cacheName: nil)
         try? fetchController.performFetch()
+    }
+
+    func saveAndReload()  {
+        try? context.save()
+        try? fetchController.performFetch()
+        tableView.reloadData()
     }
 }
 
@@ -56,7 +60,6 @@ extension WeightsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let weightEntry = fetchController.object(at: indexPath)
         context.delete(weightEntry)
-        try? fetchController.performFetch()
-        tableView.reloadData()
+        saveAndReload()
     }
 }
