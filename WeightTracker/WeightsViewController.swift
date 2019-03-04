@@ -49,3 +49,12 @@ extension WeightsViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension WeightsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let weightEntry = fetchController.object(at: indexPath)
+        context.delete(weightEntry)
+        try? fetchController.performFetch()
+        tableView.reloadData()
+    }
+}
