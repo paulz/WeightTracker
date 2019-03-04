@@ -88,11 +88,18 @@
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
+            key = "LOAD_APPDATA"
+            value = "../UITests/SampleData"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "DYLD_PRINT_LIBRARIES"
+            value = ""
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "DYLD_PRINT_INITIALIZERS"
+            value = ""
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>

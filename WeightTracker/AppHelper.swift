@@ -1,8 +1,13 @@
 import Foundation
 
-func loadAppData(name: String) {
-    let bundleURL = Bundle.main.url(forResource: name, withExtension: "xcappdata")!
-    let contentsURL = bundleURL.appendingPathComponent("AppData")
+func loadAppData() {
+    let processInfo = ProcessInfo.processInfo
+    guard let appDataPath = processInfo.environment["LOAD_APPDATA"] else {
+        return
+    }
+    let loaderUrl = URL(fileURLWithPath: #file)
+    let bundleUrl = URL(fileURLWithPath: appDataPath, relativeTo: loaderUrl).appendingPathExtension("xcappdata")
+    let contentsURL = bundleUrl.appendingPathComponent("AppData")
     let fileManager = FileManager.default
     let enumerator = fileManager.enumerator(at: contentsURL,
                                             includingPropertiesForKeys: [.isDirectoryKey],

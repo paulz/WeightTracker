@@ -5,7 +5,7 @@ import CoreData
 extension SwinjectStoryboard {
     public static func setup() {
         defaultContainer.register(NSPersistentContainer.self) { _ in
-            loadAppData(name: "SampleData")
+            loadAppData()
             let container = NSPersistentContainer(name: "WeightTracker")
             container.loadPersistentStores { (description: NSPersistentStoreDescription, error: Error?) in
                 assert(error == nil)
