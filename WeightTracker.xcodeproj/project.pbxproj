@@ -18,6 +18,7 @@
 		4B6ED395222C8F4F000B5263 /* WeightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */; };
 		4BC1181F222CDDB500D96056 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1181E222CDDB400D96056 /* DependencyInjection.swift */; };
 		4BC11821222CE15200D96056 /* DataModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC11820222CE15200D96056 /* DataModelSpec.swift */; };
+		4BC11826222D9A0C00D96056 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC11825222D9A0C00D96056 /* AppConfiguration.swift */; };
 		86BB2616ADCDBF16C676E88B /* Pods_AppSpecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EEB6F9E45B2281EFBB6067 /* Pods_AppSpecs.framework */; };
 		C85D72991425EA6C6B2409E8 /* libPods-UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 119E8D368E52E45D0DDCF16D /* libPods-UITests.a */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		4BC1181E222CDDB400D96056 /* DependencyInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		4BC11820222CE15200D96056 /* DataModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelSpec.swift; sourceTree = "<group>"; };
 		4BC11822222D94AA00D96056 /* SampleData.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SampleData.xcappdata; sourceTree = "<group>"; };
+		4BC11825222D9A0C00D96056 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		60CF273DE49991BBF03C8D07 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1D7432F3F31B16564A3C91 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.debug.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,11 +161,20 @@
 		4B6ED393222C8F4F000B5263 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				4BC11822222D94AA00D96056 /* SampleData.xcappdata */,
 				4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */,
-				4B6ED396222C8F4F000B5263 /* Info.plist */,
+				4BC11824222D99F400D96056 /* Supporting Files */,
 			);
 			path = UITests;
+			sourceTree = "<group>";
+		};
+		4BC11824222D99F400D96056 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC11825222D9A0C00D96056 /* AppConfiguration.swift */,
+				4BC11822222D94AA00D96056 /* SampleData.xcappdata */,
+				4B6ED396222C8F4F000B5263 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BF672BAB977F157CB2D0A2DF /* Frameworks */ = {
@@ -451,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC11826222D9A0C00D96056 /* AppConfiguration.swift in Sources */,
 				4B6ED395222C8F4F000B5263 /* WeightTrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

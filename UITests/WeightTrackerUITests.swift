@@ -1,34 +1,17 @@
-//
-//  WeightTrackerUITests.swift
-//  WeightTrackerUITests
-//
-//  Created by Paul Zabelin on 3/3/19.
-//  Copyright © 2019 Paul Zabelin. All rights reserved.
-//
+import Quick
+import Nimble
 
-import XCTest
+class WeightListSpec: QuickSpec {
+    override func spec() {
+        let app = XCUIApplication()
+        let tables = app.tables
 
-class WeightTrackerUITests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        describe("list of weights view") {
+            context("existing") {
+                it("should show previous entries") {
+                    expect(tables.staticTexts["150.0"].waitForExistence()) == true
+                }
+            }
+        }
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
 }
