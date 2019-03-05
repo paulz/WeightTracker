@@ -1,0 +1,16 @@
+before_script:
+  - sudo systemsetup -settimezone $TZ # to set iOS simulator timezone
+script:
+  - set -o pipefail && xcodebuild build-for-testing -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" -derivedDataPath DerivedData -parallel-testing-enabled NO | xcpretty -f `xcpretty-travis-formatter`
+  - xcodebuild test-without-building -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" -derivedDataPath DerivedData -parallel-testing-enabled NO
+after_success: bash <(curl -s 'https://codecov.io/bash') -Z -J '^WeightTracker$' -X gcov -X coveragepy -X fix -D DerivedData
+git:
+  depth: 1
+install: skip
+cache:
+  directories:
+    - DerivedData
+language: swift
+osx_image: xcode10.1
+xcode_scheme: UITests
+xcode_workspace: WeightTracker.xcworkspace
