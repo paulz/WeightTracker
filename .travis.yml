@@ -1,7 +1,5 @@
 before_script:
   - sudo systemsetup -settimezone $TZ
-  - xcrun simctl boot 'iPhone XS'
-  - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 script:
   - set -o pipefail && xcodebuild build-for-testing -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" -derivedDataPath DerivedData -parallel-testing-enabled NO | xcpretty -f `xcpretty-travis-formatter`
   - xcodebuild test-without-building -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" -derivedDataPath DerivedData -parallel-testing-enabled NO -only-testing:UITests
