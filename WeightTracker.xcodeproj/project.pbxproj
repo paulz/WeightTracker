@@ -683,10 +683,6 @@
 			baseConfigurationReference = 952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 			};
 			name = Debug;
 		};
@@ -695,10 +691,6 @@
 			baseConfigurationReference = 028E3F24F0AD6D6A552EA89A /* Pods-WeightTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
 			};
 			name = Release;
 		};
@@ -707,11 +699,6 @@
 			baseConfigurationReference = 3F02110B1CCA2E13FB014B1B /* Pods-AppSpecs.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Debug;
@@ -721,11 +708,6 @@
 			baseConfigurationReference = C90C0D2EB374150F0CB56991 /* Pods-AppSpecs.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Release;
