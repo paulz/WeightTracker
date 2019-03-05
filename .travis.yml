@@ -1,4 +1,5 @@
 before_script:
+  - sudo systemsetup -settimezone $TZ
   - xcrun simctl boot 'iPhone XS'
   - open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
 script:

@@ -20,6 +20,6 @@ class AppConfiguration: QuickConfiguration {
 
 extension XCUIElement {
     func waitForExistence() -> Bool {
-        return waitForExistence(timeout: AsyncDefaults.Timeout)
+        return waitForExistence(timeout: 10)
     }
 }
