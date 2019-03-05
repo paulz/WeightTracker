@@ -14,6 +14,7 @@ func loadAppData() {
                                             options: [],
                                             errorHandler: nil)!
     let destinationRoot = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).last!.deletingLastPathComponent()
+    try! fileManager.removeItem(at: destinationRoot)
     let sourceRoot = contentsURL.standardizedFileURL.path
     while let sourceUrl = enumerator.nextObject() as? URL {
         guard let resourceValues = try? sourceUrl.resourceValues(forKeys: [.isDirectoryKey]),
@@ -23,7 +24,6 @@ func loadAppData() {
         }
         let path = sourceUrl.standardizedFileURL.path.replacingOccurrences(of: sourceRoot, with: "")
         let destinationURL = destinationRoot.appendingPathComponent(path)
-        try? fileManager.removeItem(at: destinationURL)
         try! fileManager.createDirectory(at: destinationURL.deletingLastPathComponent(),
                                          withIntermediateDirectories: true,
                                          attributes: nil)
