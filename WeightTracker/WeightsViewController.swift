@@ -31,7 +31,7 @@ class WeightsViewController: UIViewController {
         saveAndReload()
     }
 
-    func saveAndReload()  {
+    func saveAndReload() {
         try? context.save()
         try? fetchController.performFetch()
         tableView.reloadData()

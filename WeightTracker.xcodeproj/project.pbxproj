@@ -235,6 +235,7 @@
 				4B6ED36B222C8F4E000B5263 /* Frameworks */,
 				4B6ED36C222C8F4E000B5263 /* Resources */,
 				205DF78DA2E5B134ABB80E65 /* [CP] Embed Pods Frameworks */,
+				4BFED111222EED3C009B5B4F /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -379,6 +380,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeightTracker/Pods-WeightTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BFED111222EED3C009B5B4F /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -l";
+			shellScript = "if which swiftlint >/dev/null; then\n    /usr/local/bin/swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed\"\n    echo \"brew install swiftlint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		585BAAB2ED285B6AC198AD8E /* [CP] Check Pods Manifest.lock */ = {

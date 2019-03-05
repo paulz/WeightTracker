@@ -45,9 +45,9 @@ class DataModelSpec: QuickSpec {
                         entry.weight = 130.0
                         expect {
                                 try entry.managedObjectContext?.save()
-                            }.to(throwError{ (e:NSError) in
-                                expect(e.domain) == expected.domain
-                                expect(e.code) == expected.code
+                            }.to(throwError { (error: NSError) in
+                                expect(error.domain) == expected.domain
+                                expect(error.code) == expected.code
                             })
                     }
                 }

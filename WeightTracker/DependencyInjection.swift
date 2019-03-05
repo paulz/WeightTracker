@@ -33,7 +33,7 @@ extension SwinjectStoryboard {
             NSFetchedResultsController<NSFetchRequestResult>
                 .init(fetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:)
         )
-        defaultContainer.autoregister(RandomGenerator.self, initializer:RandomGenerator.init(source:))
+        defaultContainer.autoregister(RandomGenerator.self, initializer: RandomGenerator.init(source:))
         defaultContainer.autoregister(GKRandomSource.self) {
             GKLinearCongruentialRandomSource(seed: 42)
         }
