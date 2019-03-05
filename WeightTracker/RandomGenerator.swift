@@ -10,7 +10,11 @@ import Foundation
 import GameKit
 
 class RandomGenerator {
-    var randomSource: GKRandomSource!
+    let randomSource: GKRandomSource
+
+    init(source: GKRandomSource) {
+        randomSource = source
+    }
 
     func randomWeight() -> Float {
         let lowerLimit: Float = 120

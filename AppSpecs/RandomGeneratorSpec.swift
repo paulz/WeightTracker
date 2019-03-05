@@ -20,16 +20,25 @@ class RandomGeneratorSpec: QuickSpec {
         describe("RandomGenerator") {
             var generator: RandomGenerator!
 
-            beforeEach {
-                generator = RandomGenerator()
-            }
-
             context("randomWeight") {
-                it("should produce values between 120 and 170") {
-                    generator.randomSource = MockSourceUpperBound()
-                    expect(generator.randomWeight()) ≈ 170
-                    generator.randomSource = MockSourceLowerBound()
-                    expect(generator.randomWeight()) ≈ 120
+                context("upper bound") {
+                    beforeEach {
+                        generator = RandomGenerator(source: MockSourceUpperBound())
+                    }
+
+                    it("should produce values between 120 and 170") {
+                        expect(generator.randomWeight()) ≈ 170
+                    }
+                }
+
+                context("upper bound") {
+                    beforeEach {
+                        generator = RandomGenerator(source: MockSourceLowerBound())
+                    }
+
+                    it("should produce values between 120 and 170") {
+                        expect(generator.randomWeight()) ≈ 120
+                    }
                 }
             }
         }

@@ -5,45 +5,40 @@ import GameKit
 
 extension SwinjectStoryboard {
     public static func setup() {
-        defaultContainer.register(NSPersistentContainer.self) { _ in
-            loadAppData()
-            let container = NSPersistentContainer(name: "WeightTracker")
-            container.loadPersistentStores { (description: NSPersistentStoreDescription, error: Error?) in
-                assert(error == nil)
-                assert(description.shouldInferMappingModelAutomatically)
-                assert(description.shouldMigrateStoreAutomatically)
-                assert(!description.shouldAddStoreAsynchronously)
-                assert(!description.isReadOnly)
-                NSLog("persistent store path: \(description.url!.path)")
+        loadAppData()
+        defaultContainer.autoregister(NSPersistentContainer.self) {
+            Init(value: NSPersistentContainer(name: "WeightTracker")) {
+                $0.loadPersistentStores { description, error in
+                    assert(error == nil)
+                    assert(description.shouldInferMappingModelAutomatically)
+                    assert(description.shouldMigrateStoreAutomatically)
+                    assert(!description.shouldAddStoreAsynchronously)
+                    assert(!description.isReadOnly)
+                    NSLog("persistent store path: \(description.url!.path)")
+                }
             }
-            return container
         }.inObjectScope(.container)
-        defaultContainer.register(NSManagedObjectContext.self) { r in
-            return (r~>NSPersistentContainer.self).viewContext
+        defaultContainer.register(NSManagedObjectContext.self) {
+            ($0~>NSPersistentContainer.self).viewContext
         }
-        defaultContainer.register(NSFetchRequest<WeightEntry>.self) { _ in
-            WeightEntry.fetchRequest()
+        defaultContainer.autoregister(NSFetchRequest<WeightEntry>.self) {
+            Init(value: WeightEntry.fetchRequest()) {
+                $0.sortDescriptors = [NSSortDescriptor(keyPath: \WeightEntry.date,
+                                                       ascending: false)]
+            }
         }
-        defaultContainer.register(NSFetchedResultsController<WeightEntry>.self) { r in
-            let fetchRequest: NSFetchRequest<WeightEntry> = r~>
-            fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \WeightEntry.date, ascending: false)]
-            return NSFetchedResultsController(fetchRequest: fetchRequest,
-                                              managedObjectContext: r~>,
-                                              sectionNameKeyPath: nil,
-                                              cacheName: nil)
-        }
-        defaultContainer.register(RandomGenerator.self) { r in
-            let generator = RandomGenerator()
-            generator.randomSource = r~>
-            return generator
-        }
-        defaultContainer.register(GKRandomSource.self) { _ in
+        defaultContainer.autoregister(
+            NSFetchedResultsController<NSFetchRequestResult>.self,
+            initializer:
+            NSFetchedResultsController<NSFetchRequestResult>
+                .init(fetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:)
+        )
+        defaultContainer.autoregister(RandomGenerator.self, initializer:RandomGenerator.init(source:))
+        defaultContainer.autoregister(GKRandomSource.self) {
             GKLinearCongruentialRandomSource(seed: 42)
         }
-        defaultContainer.register(DateFormatter.self) { _ in
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            return formatter
+        defaultContainer.autoregister(DateFormatter.self) {
+            Init(value: DateFormatter()) {$0.dateStyle = .medium}
         }
         defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         defaultContainer.storyboardInitCompleted(WeightsViewController.self) { r, c in
