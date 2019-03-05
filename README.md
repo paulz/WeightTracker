@@ -1,8 +1,8 @@
 # WeightTracker
 WeightTracker - Sample Core Data project with 100% test coverage.
 
-[![Build Status](https://travis-ci.org/paulz/PerspectiveTransform.svg?branch=master)](https://travis-ci.org/paulz/PerspectiveTransform)
-[![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
+[![Build Status](https://travis-ci.org/paulz/WeightTracker.svg?branch=master)](https://travis-ci.org/paulz/WeightTracker)
+[![codecov](https://codecov.io/gh/paulz/WeightTracker/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/WeightTracker)
 [![Swift][swift-badge]][swift-url]
 
 
