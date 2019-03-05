@@ -24,7 +24,7 @@ class DataModelSpec: QuickSpec {
                     expect(names).to(contain(["WeightEntry"]))
                 }
             }
-            context("User") {
+            context("WeightEntry") {
                 var entry: WeightEntry!
 
                 beforeEach {
