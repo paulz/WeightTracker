@@ -21,7 +21,6 @@
 		4BC11826222D9A0C00D96056 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC11825222D9A0C00D96056 /* AppConfiguration.swift */; };
 		4BFED106222DB22D009B5B4F /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFED105222DB22D009B5B4F /* RandomGenerator.swift */; };
 		4BFED10C222E659D009B5B4F /* RandomGeneratorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFED10B222E659D009B5B4F /* RandomGeneratorSpec.swift */; };
-		4BFED10E222E696B009B5B4F /* NotTooFastSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFED10D222E696B009B5B4F /* NotTooFastSpec.swift */; };
 		86BB2616ADCDBF16C676E88B /* Pods_AppSpecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EEB6F9E45B2281EFBB6067 /* Pods_AppSpecs.framework */; };
 		C85D72991425EA6C6B2409E8 /* libPods-UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 119E8D368E52E45D0DDCF16D /* libPods-UITests.a */; };
 /* End PBXBuildFile section */
@@ -71,7 +70,6 @@
 		4BFED109222E440B009B5B4F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = SOURCE_ROOT; };
 		4BFED10A222E444A009B5B4F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		4BFED10B222E659D009B5B4F /* RandomGeneratorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGeneratorSpec.swift; sourceTree = "<group>"; };
-		4BFED10D222E696B009B5B4F /* NotTooFastSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTooFastSpec.swift; sourceTree = "<group>"; };
 		60CF273DE49991BBF03C8D07 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1D7432F3F31B16564A3C91 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.debug.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 			children = (
 				4BC11820222CE15200D96056 /* DataModelSpec.swift */,
 				4BFED10B222E659D009B5B4F /* RandomGeneratorSpec.swift */,
-				4BFED10D222E696B009B5B4F /* NotTooFastSpec.swift */,
 				4B6ED38B222C8F4F000B5263 /* Info.plist */,
 			);
 			path = AppSpecs;
@@ -490,7 +487,6 @@
 			files = (
 				4BC11821222CE15200D96056 /* DataModelSpec.swift in Sources */,
 				4BFED10C222E659D009B5B4F /* RandomGeneratorSpec.swift in Sources */,
-				4BFED10E222E696B009B5B4F /* NotTooFastSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
