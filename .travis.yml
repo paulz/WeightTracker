@@ -1,7 +1,8 @@
+before_script: date
 script: set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" -derivedDataPath DerivedData -parallel-testing-enabled NO | xcpretty -f `xcpretty-travis-formatter`
 after_success: bash <(curl -s 'https://codecov.io/bash') -Z -J '^WeightTracker$' -X gcov -X coveragepy -X fix -D DerivedData
 git:
-  depth: false
+  depth: 0
 install: skip
 cache:
   directories:
