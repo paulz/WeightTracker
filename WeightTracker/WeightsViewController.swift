@@ -24,10 +24,10 @@ class WeightsViewController: UIViewController {
     }
 
     @IBAction func addWeight(_ sender: UIBarButtonItem) {
-        let entry = WeightEntry(context: fetchController.managedObjectContext)
-        entry.date = Date()
-        entry.weight = generator.randomWeight()
-        context.insert(entry)
+        context.insert(Init(value: WeightEntry(context: context)) {
+            $0.date = Date()
+            $0.weight = generator.randomWeight()
+        })
         saveAndReload()
     }
 
@@ -43,17 +43,20 @@ extension WeightsViewController: UITableViewDataSource {
         return fetchController.fetchedObjects!.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weight cell")!
-        let weightEntry = fetchController.object(at: indexPath)
-        cell.textLabel?.text = String(format: "%3.01f", weightEntry.weight)
-        cell.detailTextLabel?.text = dateFormatter.string(from: weightEntry.date!)
-        return cell
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return Init(value: tableView.dequeueReusableCell(withIdentifier: "weight cell")!) {
+            let weightEntry = fetchController.object(at: indexPath)
+            $0.textLabel!.text = String(format: "%3.01f", weightEntry.weight)
+            $0.detailTextLabel!.text = dateFormatter.string(from: weightEntry.date!)
+        }
     }
 }
 
 extension WeightsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         context.delete(fetchController.object(at: indexPath))
         saveAndReload()
     }
