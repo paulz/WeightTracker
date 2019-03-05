@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weights View Controller-->
+        <!--Weight Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WeightsViewController" customModule="WeightTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oMz-Si-VNi">
+                    <navigationItem key="navigationItem" title="Weight Tracker" id="oMz-Si-VNi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BfU-7J-WDu">
                             <connections>
                                 <action selector="addWeight:" destination="BYZ-38-t0r" id="KYo-zs-ReA"/>
