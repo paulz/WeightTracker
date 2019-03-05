@@ -8,8 +8,8 @@ class WeightListSpec: QuickSpec {
         let cells = tables.cells
 
         describe("list of weights view") {
-            context("existing") {
-                it("should show previous entries in reverse chronological order") {
+            context("existing entries") {
+                it("should show in reverse chronological order") {
                     expect(app.navigationBars["Weight Tracker"].waitForExistence()) == true
                     expect(cells.staticTexts["150.0"].waitForExistence()) == true
                     expect(cells.element(boundBy: 0).staticTexts["Mar 1, 2019"].exists) == true

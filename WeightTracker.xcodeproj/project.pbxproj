@@ -14,7 +14,7 @@
 		4B6ED37A222C8F4E000B5263 /* WeightTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED378222C8F4E000B5263 /* WeightTracker.xcdatamodeld */; };
 		4B6ED37C222C8F4F000B5263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6ED37B222C8F4F000B5263 /* Assets.xcassets */; };
 		4B6ED37F222C8F4F000B5263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6ED37D222C8F4F000B5263 /* LaunchScreen.storyboard */; };
-		4B6ED395222C8F4F000B5263 /* WeightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */; };
+		4B6ED395222C8F4F000B5263 /* WeightListSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED394222C8F4F000B5263 /* WeightListSpec.swift */; };
 		4B7ABC5F222DA6A70064DE77 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7ABC5E222DA6A70064DE77 /* AppHelper.swift */; };
 		4BC1181F222CDDB500D96056 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1181E222CDDB400D96056 /* DependencyInjection.swift */; };
 		4BC11821222CE15200D96056 /* DataModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC11820222CE15200D96056 /* DataModelSpec.swift */; };
@@ -56,7 +56,7 @@
 		4B6ED385222C8F4F000B5263 /* AppSpecs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSpecs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6ED38B222C8F4F000B5263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B6ED390222C8F4F000B5263 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerUITests.swift; sourceTree = "<group>"; };
+		4B6ED394222C8F4F000B5263 /* WeightListSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightListSpec.swift; sourceTree = "<group>"; };
 		4B6ED396222C8F4F000B5263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B7ABC5E222DA6A70064DE77 /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		4BC1181E222CDDB400D96056 /* DependencyInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
@@ -64,6 +64,10 @@
 		4BC11822222D94AA00D96056 /* SampleData.xcappdata */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SampleData.xcappdata; sourceTree = "<group>"; };
 		4BC11825222D9A0C00D96056 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		4BFED105222DB22D009B5B4F /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		4BFED107222E440B009B5B4F /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
+		4BFED108222E440B009B5B4F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		4BFED109222E440B009B5B4F /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = SOURCE_ROOT; };
+		4BFED10A222E444A009B5B4F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		60CF273DE49991BBF03C8D07 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1D7432F3F31B16564A3C91 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.debug.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +164,7 @@
 		4B6ED393222C8F4F000B5263 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				4B6ED394222C8F4F000B5263 /* WeightTrackerUITests.swift */,
+				4B6ED394222C8F4F000B5263 /* WeightListSpec.swift */,
 				4BC11824222D99F400D96056 /* Supporting Files */,
 			);
 			path = UITests;
@@ -182,6 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				4B7ABC5E222DA6A70064DE77 /* AppHelper.swift */,
+				4BFED109222E440B009B5B4F /* Podfile */,
+				4BFED107222E440B009B5B4F /* Podfile.lock */,
+				4BFED10A222E444A009B5B4F /* .travis.yml */,
+				4BFED108222E440B009B5B4F /* README.md */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -483,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC11826222D9A0C00D96056 /* AppConfiguration.swift in Sources */,
-				4B6ED395222C8F4F000B5263 /* WeightTrackerUITests.swift in Sources */,
+				4B6ED395222C8F4F000B5263 /* WeightListSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
