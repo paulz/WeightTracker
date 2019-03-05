@@ -21,6 +21,17 @@ extension SwinjectStoryboard {
         defaultContainer.register(NSManagedObjectContext.self) { r in
             return (r~>NSPersistentContainer.self).viewContext
         }
+        defaultContainer.register(NSFetchRequest<WeightEntry>.self) { _ in
+            WeightEntry.fetchRequest()
+        }
+        defaultContainer.register(NSFetchedResultsController<WeightEntry>.self) { r in
+            let fetchRequest: NSFetchRequest<WeightEntry> = r~>
+            fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \WeightEntry.date, ascending: false)]
+            return NSFetchedResultsController(fetchRequest: fetchRequest,
+                                              managedObjectContext: r~>,
+                                              sectionNameKeyPath: nil,
+                                              cacheName: nil)
+        }
         defaultContainer.register(RandomGenerator.self) { r in
             let generator = RandomGenerator()
             generator.randomSource = r~>
@@ -36,10 +47,9 @@ extension SwinjectStoryboard {
         }
         defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
         defaultContainer.storyboardInitCompleted(WeightsViewController.self) { r, c in
-            c.context = r~>
+            c.fetchController = r~>
             c.generator = r~>
             c.dateFormatter = r~>
-            c.fetchData()
         }
     }
 }

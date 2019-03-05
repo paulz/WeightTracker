@@ -10,29 +10,25 @@ import UIKit
 import CoreData
 
 class WeightsViewController: UIViewController {
-    var context: NSManagedObjectContext!
-    var fetchController: NSFetchedResultsController<WeightEntry>!
+    var fetchController: NSFetchedResultsController<WeightEntry>! {
+        didSet {
+            try? fetchController.performFetch()
+        }
+    }
     var generator: RandomGenerator!
     var dateFormatter: DateFormatter!
     @IBOutlet weak var tableView: UITableView!
 
+    var context: NSManagedObjectContext {
+        return fetchController.managedObjectContext
+    }
+
     @IBAction func addWeight(_ sender: UIBarButtonItem) {
-        let entry = WeightEntry(context: context)
+        let entry = WeightEntry(context: fetchController.managedObjectContext)
         entry.date = Date()
         entry.weight = generator.randomWeight()
         context.insert(entry)
         saveAndReload()
-    }
-
-    func fetchData() {
-        let fetchRequest: NSFetchRequest<WeightEntry> = WeightEntry.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(keyPath: \WeightEntry.date, ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        fetchController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                     managedObjectContext: context,
-                                                     sectionNameKeyPath: nil,
-                                                     cacheName: nil)
-        try? fetchController.performFetch()
     }
 
     func saveAndReload()  {
@@ -58,8 +54,7 @@ extension WeightsViewController: UITableViewDataSource {
 
 extension WeightsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        let weightEntry = fetchController.object(at: indexPath)
-        context.delete(weightEntry)
+        context.delete(fetchController.object(at: indexPath))
         saveAndReload()
     }
 }
