@@ -1,0 +1,11 @@
+# .slather.yml
+
+coverage_service: html
+xcodeproj: WeightTracker.xcodeproj
+configuration: Debug
+workspace: WeightTracker.xcworkspace
+scheme: UITests
+binary_basename: WeightTracker
+input_format: profdata
+ignore:
+  - Pods/*
