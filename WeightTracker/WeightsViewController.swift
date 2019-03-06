@@ -12,6 +12,9 @@ import CoreData
 class WeightsViewController: UIViewController {
     var fetchController: NSFetchedResultsController<WeightEntry>! {
         didSet {
+            fetchController.fetchRequest.fetchBatchSize = 10
+            fetchController.fetchRequest.fetchOffset = 30
+            fetchController.fetchRequest.fetchLimit = 20
             try? fetchController.performFetch()
         }
     }
@@ -40,7 +43,7 @@ class WeightsViewController: UIViewController {
 
 extension WeightsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchController.fetchedObjects!.count
+        return fetchController.sections![section].numberOfObjects
     }
 
     func tableView(_ tableView: UITableView,

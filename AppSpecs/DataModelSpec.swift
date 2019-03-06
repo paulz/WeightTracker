@@ -53,10 +53,21 @@ class DataModelSpec: QuickSpec {
                 }
 
                 context("fetchRequest") {
-                    it("should load all entries") {
-                        let request: NSFetchRequest<WeightEntry> = WeightEntry.fetchRequest()
-                        let entries = try! moc.fetch(request)
-                        expect(entries.count) >= 1
+                    fit("should load all entries") {
+//                        let request: NSFetchRequest<WeightEntry> = WeightEntry.fetchRequest()
+//                        let entries = try! moc.fetch(request)
+//                        expect(entries.count) >= 1
+
+                        let another = NSFetchRequest<NSDictionary>()
+                        another.entity = WeightEntry.entity()
+                        another.resultType = .dictionaryResultType
+                        let desc = NSExpressionDescription()
+                        desc.name = "average"
+                        desc.expression = NSExpression(forKeyPath: "@avg.weight")
+                        desc.expressionResultType = .doubleAttributeType
+                        another.propertiesToFetch = [desc]
+                        let result = try! moc.fetch(another)
+                        print(result.first)
                     }
                 }
             }

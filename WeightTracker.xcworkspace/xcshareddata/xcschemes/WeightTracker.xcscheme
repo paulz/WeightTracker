@@ -92,6 +92,12 @@
             ReferencedContainer = "container:WeightTracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.SQLDebug 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "DYLD_PRINT_OPTS"
@@ -101,7 +107,7 @@
          <EnvironmentVariable
             key = "LOAD_APPDATA"
             value = "../UITests/SampleData"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "DYLD_PRINT_LIBRARIES"
