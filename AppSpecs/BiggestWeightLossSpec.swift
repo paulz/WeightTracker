@@ -1,43 +1,37 @@
 import Quick
 import Nimble
 
-func biggestWeighLost(weights: [Float]) -> Float? {
-    let maximums = maximumFirstWeight(weights: weights)
-    let minimums = minimumLastWeight(weights: weights)
-    return weights.indices.map {maximums[$0] - minimums[$0]}.max()
-}
-
-func maximumFirstWeight(weights: [Float]) -> [Float] {
-    return weights.indices.map {weights[0...$0].max()!}
-}
-
-func minimumLastWeight(weights: [Float]) -> [Float] {
-    return weights.indices.map {weights[$0...].min()!}
+extension Array where Element: Strideable {
+    func biggestLoss() -> Element.Stride? {
+        let maximums = indices.map {self[0...$0].max()!}
+        let minimums = indices.map {self[$0...].min()!}
+        return indices.map {minimums[$0].distance(to: maximums[$0])}.max()
+    }
 }
 
 class BiggestWeightLossSpec: QuickSpec {
     override func spec() {
         fdescribe("biggestWeighLost") {
             it("should be 2 for 3,2,1") {
-                expect(biggestWeighLost(weights: [3, 2, 1])) == 2
+                expect([3, 2, 1].biggestLoss()) == 2
             }
             it("should be 0 for 1,2,3") {
-                expect(biggestWeighLost(weights: [1, 2, 3])) == 0
+                expect([1, 2, 3].biggestLoss()) == 0
             }
             it("should be 1 for 3,2,2") {
-                expect(biggestWeighLost(weights: [3, 2, 2])) == 1
+                expect([3, 2, 2].biggestLoss()) == 1
             }
             it("should be 1 for 3,3,2") {
-                expect(biggestWeighLost(weights: [3, 3, 2])) == 1
+                expect([3, 3, 2].biggestLoss()) == 1
             }
             it("should be 2 for 3,1,4,3,3") {
-                expect(biggestWeighLost(weights: [3, 1, 4, 3, 3])) == 2
+                expect([3, 1, 4, 3, 3].biggestLoss()) == 2
             }
             it("should be 2 for 3,2,2,3,1,1,2,3") {
-                expect(biggestWeighLost(weights: [3, 2, 2, 3, 1, 1, 2, 3])) == 2
+                expect([3, 2, 2, 3, 1, 1, 2, 3].biggestLoss()) == 2
             }
             it("should be nil when empty") {
-                expect(biggestWeighLost(weights: [])).to(beNil())
+                expect([Float]().biggestLoss()).to(beNil())
             }
         }
     }
