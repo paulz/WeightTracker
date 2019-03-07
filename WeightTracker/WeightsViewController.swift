@@ -40,7 +40,7 @@ class WeightsViewController: UIViewController {
 
 extension WeightsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchController.fetchedObjects!.count
+        return fetchController.sections![section].numberOfObjects
     }
 
     func tableView(_ tableView: UITableView,
