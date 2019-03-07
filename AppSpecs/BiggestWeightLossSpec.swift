@@ -3,15 +3,15 @@ import Nimble
 
 extension Array where Element: Strideable {
     func biggestLoss() -> Element.Stride? {
-        let maximums = indices.map {self[0...$0].max()!}
-        let minimums = indices.map {self[$0...].min()!}
+        let maximums = indices.map {prefix(through: $0).max()!}
+        let minimums = indices.map {suffix(from: $0).min()!}
         return indices.map {minimums[$0].distance(to: maximums[$0])}.max()
     }
 }
 
 class BiggestWeightLossSpec: QuickSpec {
     override func spec() {
-        fdescribe("biggestWeighLost") {
+        describe("biggestWeighLost") {
             it("should be 2 for 3,2,1") {
                 expect([3, 2, 1].biggestLoss()) == 2
             }
@@ -32,6 +32,12 @@ class BiggestWeightLossSpec: QuickSpec {
             }
             it("should be nil when empty") {
                 expect([Float]().biggestLoss()).to(beNil())
+            }
+
+            context("floats") {
+                it("should be a float") {
+                    expect([3.1, 2, 0.9].biggestLoss()) == 2.2
+                }
             }
         }
     }
