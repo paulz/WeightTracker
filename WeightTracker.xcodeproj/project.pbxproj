@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1BEEACA1B18ECC14826542F1 /* Pods_WeightTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2BD1D30AEBE5CB2CC3C0BAC /* Pods_WeightTracker.framework */; };
+		4B0470112230DE9A00728BA8 /* BiggestWeightLossSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0470102230DE9A00728BA8 /* BiggestWeightLossSpec.swift */; };
 		4B6ED372222C8F4E000B5263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED371222C8F4E000B5263 /* AppDelegate.swift */; };
 		4B6ED374222C8F4E000B5263 /* WeightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6ED373222C8F4E000B5263 /* WeightsViewController.swift */; };
 		4B6ED377222C8F4E000B5263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6ED375222C8F4E000B5263 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		028E3F24F0AD6D6A552EA89A /* Pods-WeightTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.release.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.release.xcconfig"; sourceTree = "<group>"; };
 		119E8D368E52E45D0DDCF16D /* libPods-UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F02110B1CCA2E13FB014B1B /* Pods-AppSpecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSpecs.debug.xcconfig"; path = "Target Support Files/Pods-AppSpecs/Pods-AppSpecs.debug.xcconfig"; sourceTree = "<group>"; };
+		4B0470102230DE9A00728BA8 /* BiggestWeightLossSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggestWeightLossSpec.swift; sourceTree = "<group>"; };
 		4B6ED36E222C8F4E000B5263 /* WeightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6ED371222C8F4E000B5263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B6ED373222C8F4E000B5263 /* WeightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC11820222CE15200D96056 /* DataModelSpec.swift */,
+				4B0470102230DE9A00728BA8 /* BiggestWeightLossSpec.swift */,
 				4BFED10B222E659D009B5B4F /* RandomGeneratorSpec.swift */,
 				4B6ED38B222C8F4F000B5263 /* Info.plist */,
 			);
@@ -511,6 +514,7 @@
 			files = (
 				4BC11821222CE15200D96056 /* DataModelSpec.swift in Sources */,
 				4BFED10C222E659D009B5B4F /* RandomGeneratorSpec.swift in Sources */,
+				4B0470112230DE9A00728BA8 /* BiggestWeightLossSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
