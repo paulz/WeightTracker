@@ -9,9 +9,9 @@ extension Array where Element: Strideable {
     }
 }
 
-class BiggestWeightLossSpec: QuickSpec {
+class BiggestLossSpec: QuickSpec {
     override func spec() {
-        describe("biggestWeighLost") {
+        describe("biggestLoss") {
             it("should be 2 for 3,2,1") {
                 expect([3, 2, 1].biggestLoss()) == 2
             }
