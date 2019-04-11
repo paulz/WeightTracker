@@ -1,4 +1,5 @@
 platform :ios, '12.0'
+use_frameworks!
 
 def bdd
   pod 'Quick'
@@ -6,7 +7,6 @@ def bdd
 end
 
 target 'WeightTracker' do
-  use_frameworks!
   pod 'SwinjectStoryboard'
   pod 'SwinjectAutoregistration'
 

@@ -24,7 +24,7 @@
 		4BFED10C222E659D009B5B4F /* RandomGeneratorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFED10B222E659D009B5B4F /* RandomGeneratorSpec.swift */; };
 		4BFED110222EE6A1009B5B4F /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFED10F222EE6A1009B5B4F /* Init.swift */; };
 		86BB2616ADCDBF16C676E88B /* Pods_AppSpecs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8EEB6F9E45B2281EFBB6067 /* Pods_AppSpecs.framework */; };
-		C85D72991425EA6C6B2409E8 /* libPods-UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 119E8D368E52E45D0DDCF16D /* libPods-UITests.a */; };
+		B00E773C60787AF08439DF0C /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BBCCA054143402EC1D0878 /* Pods_UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		028E3F24F0AD6D6A552EA89A /* Pods-WeightTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.release.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.release.xcconfig"; sourceTree = "<group>"; };
-		119E8D368E52E45D0DDCF16D /* libPods-UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F02110B1CCA2E13FB014B1B /* Pods-AppSpecs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSpecs.debug.xcconfig"; path = "Target Support Files/Pods-AppSpecs/Pods-AppSpecs.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0470102230DE9A00728BA8 /* BiggestWeightLossSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggestWeightLossSpec.swift; sourceTree = "<group>"; };
 		4B6ED36E222C8F4E000B5263 /* WeightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +75,7 @@
 		4BFED10F222EE6A1009B5B4F /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
 		60CF273DE49991BBF03C8D07 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F1D7432F3F31B16564A3C91 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
+		92BBCCA054143402EC1D0878 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightTracker.debug.xcconfig"; path = "Target Support Files/Pods-WeightTracker/Pods-WeightTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		C2BD1D30AEBE5CB2CC3C0BAC /* Pods_WeightTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeightTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90C0D2EB374150F0CB56991 /* Pods-AppSpecs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSpecs.release.xcconfig"; path = "Target Support Files/Pods-AppSpecs/Pods-AppSpecs.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C85D72991425EA6C6B2409E8 /* libPods-UITests.a in Frameworks */,
+				B00E773C60787AF08439DF0C /* Pods_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				E8EEB6F9E45B2281EFBB6067 /* Pods_AppSpecs.framework */,
-				119E8D368E52E45D0DDCF16D /* libPods-UITests.a */,
 				C2BD1D30AEBE5CB2CC3C0BAC /* Pods_WeightTracker.framework */,
+				92BBCCA054143402EC1D0878 /* Pods_UITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -274,6 +274,7 @@
 				4B6ED38C222C8F4F000B5263 /* Sources */,
 				4B6ED38D222C8F4F000B5263 /* Frameworks */,
 				4B6ED38E222C8F4F000B5263 /* Resources */,
+				21D1EFDB7B7A88190C75DD6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,6 +383,30 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeightTracker/Pods-WeightTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		21D1EFDB7B7A88190C75DD6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UITests/Pods-UITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UITests/Pods-UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4BFED111222EED3C009B5B4F /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,8 +479,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AppSpecs/Pods-AppSpecs-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-framework/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick-framework/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (

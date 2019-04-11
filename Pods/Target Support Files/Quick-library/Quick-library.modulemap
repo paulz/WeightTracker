@@ -1,6 +1,0 @@
-module Quick {
-  umbrella header "Quick-library-umbrella.h"
-
-  export *
-  module * { export * }
-}
