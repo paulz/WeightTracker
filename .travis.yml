@@ -11,6 +11,6 @@ cache:
   directories:
     - DerivedData
 language: swift
-osx_image: xcode10.1
+osx_image: xcode10.2
 xcode_scheme: UITests
 xcode_workspace: WeightTracker.xcworkspace
