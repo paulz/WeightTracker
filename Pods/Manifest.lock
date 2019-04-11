@@ -1,11 +1,11 @@
 PODS:
-  - Nimble (8.0.0)
+  - Nimble (8.0.1)
   - Quick (2.0.0)
-  - Swinject (2.5.0)
-  - SwinjectAutoregistration (2.5.1):
-    - Swinject (~> 2.5)
-  - SwinjectStoryboard (2.1.0):
-    - Swinject (~> 2.5)
+  - Swinject (2.6.0)
+  - SwinjectAutoregistration (2.6.0):
+    - Swinject (~> 2.6)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
   - Nimble
@@ -22,12 +22,12 @@ SPEC REPOS:
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
-  Nimble: a0e6f95b4b91a4f66b6da3512b6bebc07c9cbf49
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
-  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
-  SwinjectAutoregistration: f72bf894cbd2ee4a9153e00fa5208e93fb44d283
-  SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  SwinjectAutoregistration: 93a908f7543c401b0c315305ac0ae501efdbce89
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
 PODFILE CHECKSUM: 64396e82fe1515273820735eafc50d3ddc18d8e0
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.6.1
