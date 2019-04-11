@@ -298,13 +298,16 @@
 				TargetAttributes = {
 					4B6ED36D222C8F4E000B5263 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					4B6ED384222C8F4F000B5263 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4B6ED36D222C8F4E000B5263;
 					};
 					4B6ED38F222C8F4F000B5263 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4B6ED36D222C8F4E000B5263;
 					};
 				};
@@ -714,6 +717,7 @@
 			baseConfigurationReference = 952A0D0E079F0DCF087D3ACB /* Pods-WeightTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -722,6 +726,7 @@
 			baseConfigurationReference = 028E3F24F0AD6D6A552EA89A /* Pods-WeightTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -730,6 +735,7 @@
 			baseConfigurationReference = 3F02110B1CCA2E13FB014B1B /* Pods-AppSpecs.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Debug;
@@ -739,6 +745,7 @@
 			baseConfigurationReference = C90C0D2EB374150F0CB56991 /* Pods-AppSpecs.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeightTracker.app/WeightTracker";
 			};
 			name = Release;
@@ -752,6 +759,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = WeightTracker;
 			};
 			name = Debug;
@@ -765,6 +773,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = WeightTracker;
 			};
 			name = Release;
